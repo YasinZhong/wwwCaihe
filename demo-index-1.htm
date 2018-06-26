@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>开始使用 &middot; SUI Mobile</title>
+<meta name="description" content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+<meta name="author" content="阿里巴巴国际UED前端">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="icon" href="">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="font_1431676360_347254.css" tppabs="http://at.alicdn.com/t/font_1431676360_347254.css">
+
+<link rel="stylesheet" href="sm.css" tppabs="http://m.sui.taobao.org/dist/css/sm.css">
+<link rel="stylesheet" href="sm-extend.css" tppabs="http://m.sui.taobao.org/dist/css/sm-extend.css">
+<link rel="stylesheet" href="docs.css" tppabs="http://m.sui.taobao.org/assets/css/docs.css">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+<script src="zepto.js" tppabs="http://m.sui.taobao.org/assets/js/zepto.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "hm.js-ba76f8230db5f616edc89ce066670710"/*tpa=http://hm.baidu.com/hm.js?ba76f8230db5f616edc89ce066670710*/;
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  </head>
+  <body ontouchstart="">
+    <!--[if lt IE 9]>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Attention!</h4>
+    <p>
+      Looks like your current browser is old and doesn't support many features used in this page.
+      Please take a second to <a href="javascript:if(confirm('http://browsehappy.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://browsehappy.com/'" tppabs="http://browsehappy.com/">upgrade to a more modern browser</a>.
+    </p>
+  </div>
+<![endif]-->
+
+    <div class="docs-sub-header">
+  <header class="docs-masthead clearfix">
+  <div class="container">
+    <div class="column">
+      <h1 class="docs-title">
+        <a href="index.htm" tppabs="http://m.sui.taobao.org/" data-ignore="push">SUI Mobile</a>
+      </h1>
+      <nav class="docs-nav clearfix">
+        <a class="docs-nav-trigger icon icon-menu pull-right js-docs-nav-trigger" href="#"></a>
+        <div class="docs-nav-group">
+          <a class="docs-nav-item" href="index.htm" tppabs="http://m.sui.taobao.org/" data-ignore="push">首页</a>
+          <a class="docs-nav-item" href="index-1.htm" tppabs="http://m.sui.taobao.org/getting-started" data-ignore="push">开始使用</a>
+          <a class="docs-nav-item" href="index-2.htm" tppabs="http://m.sui.taobao.org/components" data-ignore="push">基础组件</a>
+          <a class="docs-nav-item" href="index-3.htm" tppabs="http://m.sui.taobao.org/extends" data-ignore="push">拓展组件</a>
+          <a class="docs-nav-item" href="index-4.htm" tppabs="http://m.sui.taobao.org/demos" data-ignore="push">示例</a>
+          <a class="docs-nav-item" href="index-5.htm" tppabs="http://m.sui.taobao.org/faq" data-ignore="push">FAQ</a>
+          <a class="docs-nav-item" href="index-6.htm" tppabs="http://m.sui.taobao.org/changelog" data-ignore="push">更新日志</a>
+          <a class="docs-nav-item" href="index-7.htm" tppabs="http://m.sui.taobao.org/about" data-ignore="push">关于</a>
+          <a class="docs-nav-item" href="javascript:if(confirm('https://github.com/sdc-alibaba/SUI-Mobile  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/sdc-alibaba/SUI-Mobile'" tppabs="https://github.com/sdc-alibaba/SUI-Mobile" target="_blank" data-ignore="push">github</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="docs-sub-content">
+      <h2 class="page-title">开始使用</h2>
+      <p class="page-description">只需要如下几个简单的步骤，就可以在你的应用中使用SUI Mobile了.</p>
+    </div>
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="column-group">
+    <div class="column docs-content">
+      <div class="docs-section">
+        <h2>创建页面</h2>
+        <p class="lead"></p>
+
+        <h3>1. 引用静态资源</h3>
+        <p>我们提供了CDN地址可以直接使用，并且强烈建议使用我们的CDN而不是下载到本地。</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/sj/lib/zepto/zepto.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<p>如果你用到了拓展包中的组件，还需要引用extend扩展包，为减少请求数，可以使用阿里CDN的combo功能：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+        <h3>2. 调试代码</h3>
+        <p>如果你希望在开发环境下可以调试代码，那么你可以这样引用未压缩的版本</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/sm.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/sj/lib/zepto/zepto.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/sm.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!--如果你用到了拓展包中的组件，还需要引用下面两个--&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+        <h3>完整的页面模板</h3>
+        <p>你可以直接用下面的模板来创建你的页面：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>我的生活<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"initial-scale=1, maximum-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">href=</span><span class="s">"/favicon.ico"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"apple-mobile-web-app-capable"</span> <span class="na">content=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"apple-mobile-web-app-status-bar-style"</span> <span class="na">content=</span><span class="s">"black"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page page-current"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 你的html代码 --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/sj/lib/zepto/zepto.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js'</span> <span class="na">charset=</span><span class="s">'utf-8'</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+          <h2>使用组件</h2>
+          <p class="lead">上面已经有了页面的基本结构，下一步就是把你需要的组件塞进去，这里我们以一个卡片形式的页面为例。我们主要会用到导航栏和卡片两个组件。</p>
+          <p>首先，我们需要一个标题栏和工具栏。</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"bar bar-nav"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button-link button-nav pull-left"</span> <span class="na">href=</span><span class="s">"/demos/card"</span> <span class="na">data-transition=</span><span class="s">'slide-out'</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-left"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      返回
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>我的生活<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"bar bar-tab"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tab-item active"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-home"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tab-label"</span><span class="nt">&gt;</span>首页<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tab-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-me"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tab-label"</span><span class="nt">&gt;</span>我<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tab-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-star"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tab-label"</span><span class="nt">&gt;</span>收藏<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tab-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-settings"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tab-label"</span><span class="nt">&gt;</span>设置<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/nav&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- 这里是页面内容区 --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+          <p>然后我们在内容区中填上几个卡片</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-index"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250.3.0q60.jpg)"</span> <span class="na">valign=</span><span class="s">"bottom"</span> <span class="na">class=</span><span class="s">"card-header color-white no-border"</span><span class="nt">&gt;</span>旅途的山<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-content-inner"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"color-gray"</span><span class="nt">&gt;</span>发表于 2015/01/15<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>此处是内容...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-footer"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>赞<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>更多<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250.3.0q60.jpg)"</span> <span class="na">valign=</span><span class="s">"bottom"</span> <span class="na">class=</span><span class="s">"card-header color-white no-border"</span><span class="nt">&gt;</span>旅途的山<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-content-inner"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"color-gray"</span><span class="nt">&gt;</span>发表于 2015/01/15<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>此处是内容...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-footer"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>赞<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>更多<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  ... 可以多放几张卡片
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+        <p>最终效果是这样的 <a href="index-8.htm" tppabs="http://m.sui.taobao.org/examples/getting-started/" target="_blank" data-ignore="push">示例</a></p>
+      </div>
+  </div>
+
+  <div class="column">
+    <!-- Footer -->
+    <div class="docs-footer">
+  <!-- Social links -->
+
+  <p class="docs-footer-text">@author 阿里巴巴共享业务事业部UED团队</p>
+
+  <ul class="docs-footer-links">
+    <li>友情链接</li>
+    <li><a href="javascript:if(confirm('http://sui.taobao.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://sui.taobao.org/'" tppabs="http://sui.taobao.org/" data-ignore="push">SUI PC 版</a></li>
+  </ul>
+</div>
+
+<script src="sm.js" tppabs="http://m.sui.taobao.org/dist/js/sm.js"></script>
+<script src="sm-extend.js" tppabs="http://m.sui.taobao.org/dist/js/sm-extend.js"></script>
+<script src="sm-city-picker.js" tppabs="http://m.sui.taobao.org/dist/js/sm-city-picker.js"></script>
+<script>$.smConfig.router=false</script>
+<script src="docs.js" tppabs="http://m.sui.taobao.org/assets/js/docs.js"></script>
+
+  </div>
+</div>
+
+  </body>
+</html>

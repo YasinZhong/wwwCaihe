@@ -9,8 +9,8 @@
 
 		<div id="" style="text-align: center;">
 			<h1 style="color: rgb(60,100,100);">彩搜 - 发现新世界</h1>	
-			<input id="input" formaction="jsfsubmit()" style="width: 30em; height: 2em;border:1px solid #378888; margin-bottom: 0.4em;box-shadow: 0px 0px 5px #378888;">
-			<button id="button" type="submit" onclick="jsfsubmit()" >搜索</button>
+			<input id="input" formaction="jsfsubmit()" placeholder="输入要搜索文本..." style="width: 30em; height: 2.5em;border:1px solid #378888; margin-bottom: 0.4em;box-shadow: 0px 0px 5px #378888;">
+			<button id="button" type="submit" style="height: 2.5em;" onclick="jsfsubmit()" >搜索</button>
 		</div>
 		
 		<br />
@@ -65,11 +65,13 @@
 			if( windoww<windowh ){//只要是竖屏状态。
 				iframewidth="93%";
 				iframeheight=(windowh*0.5) + "px";
-				document.getElementById("button").style="width:30em;height:2em;";
+				document.getElementById("button").style="width:30em;height:2.5em";
 				
 				}
 		</script>
 		
-		
+		 <div id="div-footer" style="text-align:center;text-size:0.5em;">
+			 ©<span id="fyear">2016</span> www.caihe.org<br/>版权所有 侵权必究</div>
+		 <script>document.getElementById('fyear').innerHTML = new Date().getFullYear() + '';</script>
 	</body>
 </html>

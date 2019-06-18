@@ -13,9 +13,9 @@
 			<button type="submit" onclick="jsfsubmit()" >搜索</button>
 		</div>
 		
-		<br /><br />
+		<br />
 		
-		<div id="page" style="text-align: center;">
+		<div id="page" style="text-align: center;overflow-y: scroll;">
 			
 		</div>
 
@@ -25,6 +25,7 @@
 				"https://sogou.com/web?query=",
 				"https://www.so.com/s?q=",
 			];
+			var iframewidth="33%";
 
 			function jsfsubmit() {
 
@@ -37,13 +38,28 @@
 
 					//创建新的
 					iframe[i] = document.createElement("iframe");
-					iframe[i].setAttribute("style", "width: 600px;height: 800px;");
+					iframe[i].setAttribute("style", "width: " + iframewidth + ";height: 800px; margin-top: 1em;");
 					iframe[i].setAttribute("src", enginelist[i] + text);
 					iframe[i].setAttribute("id", "ifr" + i);
 					document.getElementById("page").appendChild(iframe[i]);
 				}
 			}
 			
+			
+			//创建一个探针
+			var VarBody = (document.getElementsByTagName("body"))[0];//返回的是数组
+			var VarDivProb= document.createElement("div");
+			VarDivProb.id = "probe";
+			VarDivProb.style="width:1cm;";
+			VarBody.appendChild(VarDivProb);
+			//下面计算屏幕
+			var windoww=window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth;
+			var windowh=window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+			var probeoffsetwidth = document.getElementById("probe").offsetWidth;//获取探针div的实际平面宽度
+			var windowwcm = (screen.width / probeoffsetwidth).toFixed(1);//计算得到屏幕的厘米数
+			//下面设置 iframewidth ,也就是框架页面宽度
+			if( windoww<windowh ){ iframewidth="93%"; }//只要是竖屏状态。
+			if( windoww>windowh && windowwcm>38){iframewidth="33%";}
 		</script>
 		
 		

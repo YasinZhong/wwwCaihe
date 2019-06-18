@@ -23,7 +23,9 @@
 			var enginelist = [
 				"https://bing.com/search?q=",
 				"https://sogou.com/web?query=",
-				"https://www.so.com/s?q=",
+				"https://so.com/s?q=",
+				"https://baidu.com/s?wd=",
+				//"fr1.html","fr1.html","fr1.html", //测试时注释此行
 			];
 			var iframewidth="33%";
 
@@ -38,7 +40,7 @@
 
 					//创建新的
 					iframe[i] = document.createElement("iframe");
-					iframe[i].setAttribute("style", "width: " + iframewidth + ";height: 800px; margin-top: 1em;");
+					iframe[i].setAttribute("style", "width: " + iframewidth + ";height: 650px; margin-top: 1em;");
 					iframe[i].setAttribute("src", enginelist[i] + text);
 					iframe[i].setAttribute("id", "ifr" + i);
 					document.getElementById("page").appendChild(iframe[i]);
@@ -58,8 +60,8 @@
 			var probeoffsetwidth = document.getElementById("probe").offsetWidth;//获取探针div的实际平面宽度
 			var windowwcm = (screen.width / probeoffsetwidth).toFixed(1);//计算得到屏幕的厘米数
 			//下面设置 iframewidth ,也就是框架页面宽度
-			if( windoww<windowh ){ iframewidth="93%"; }//只要是竖屏状态。
-			if( windoww>windowh && windowwcm>38){iframewidth="33%";}
+			if( windoww<windowh ){ iframewidth="93%";}//只要是竖屏状态。
+			if( windoww>windowh && windowwcm>38){iframewidth="40%";}
 		</script>
 		
 		

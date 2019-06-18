@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>彩搜</title>
+	</head>
+	<body>
+
+		<div id="" style="text-align: center;">
+			<h1>彩搜 - 发现新世界</h1>	
+			<input id="tidinput" formaction="jsfsubmit()" style="width: 30em; height: 2em;">
+			<button type="submit" onclick="jsfsubmit()" >搜索</button>
+		</div>
+		
+		<br /><br />
+		
+		<div id="page" style="text-align: center;">
+			
+		</div>
+
+		<script type="text/javascript">
+			var enginelist = [
+				"https://bing.com/search?q=",
+				"https://sogou.com/web?query=",
+				"https://www.so.com/s?q=",
+			];
+
+			function jsfsubmit() {
+
+				var text = document.getElementById("tidinput").value;
+				var iframe = new Array();
+				for (i = 0; i < enginelist.length; i++) {
+					//删除原有
+					var idObject = document.getElementById("ifr" + i);
+					if (idObject != null) idObject.parentNode.removeChild(idObject);
+
+					//创建新的
+					iframe[i] = document.createElement("iframe");
+					iframe[i].setAttribute("style", "width: 600px;height: 800px;");
+					iframe[i].setAttribute("src", enginelist[i] + text);
+					iframe[i].setAttribute("id", "ifr" + i);
+					document.getElementById("page").appendChild(iframe[i]);
+				}
+			}
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>
